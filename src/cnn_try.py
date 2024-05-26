@@ -19,7 +19,7 @@ print(x)
 print(torch.cuda.is_available())
 
 transform = transforms.Compose([
-    transforms.ToTensor(),  # 将图片转换为Tensor,归一化至[0,1]
+    transforms.ToTensor(),  # 灏嗗浘鐗囪浆鎹负Tensor,褰掍竴鍖栬嚦[0,1]
 ])
 
 class EMGDataset(Dataset):
@@ -31,7 +31,7 @@ class EMGDataset(Dataset):
  
     def __getitem__(self, index):
         emgData = self.data[index,...]
-        emgData = np.squeeze(emgData)#似乎不应该压缩了
+        emgData = np.squeeze(emgData)#浼间箮涓嶅簲璇ュ帇缂╀簡
         # emgData =emgData.unsqueeze(0)
         # emglabel = self.label[index,0]
 
